@@ -1,5 +1,9 @@
+def run():
+    return
+
+
 def main():
-   run()
+    run()
 
 
 if __name__ == '__main__':
