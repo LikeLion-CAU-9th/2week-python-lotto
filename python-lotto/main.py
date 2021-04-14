@@ -1,5 +1,8 @@
+from lotto.lotto_generator import lotto_number_generator
+
+
 def run():
-    return
+    print(lotto_number_generator())
 
 
 def main():
