@@ -1,4 +1,4 @@
-from lotto.lotto import LottoInformation
+# from lotto_ticket.lotto import LottoInformation
 from lotto_decorator.printer_decorator import printer_format
 
 INPUT_ZERO_TO_LOTTO_AMOUNT = 0
@@ -21,7 +21,6 @@ class NotZeroLottoAmountError(Exception):
         super().__init__(InputMessage.INPUT_NOT_ZERO_LOTTO_TOTAL_AMOUNT_MESSAGE)
 
 
-@printer_format
 def input_purchased_lotto_total_amount():
     while True:
         try:
@@ -38,7 +37,7 @@ def is_over_minimum_lotto_total_amount(lotto_total_amount):
     if lotto_total_amount == INPUT_ZERO_TO_LOTTO_AMOUNT:
         raise NotZeroLottoAmountError
 
-    if lotto_total_amount < LottoInformation.LOTTO_PRICE:
+    if lotto_total_amount < 1000:
         raise NotSatisfyMinimumAmountError
 
     return True
