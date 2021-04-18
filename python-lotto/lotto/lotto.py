@@ -1,1 +1,2 @@
-LOTTO_PRICE = 1000
+class LottoInformation:
+    LOTTO_PRICE = 1000
