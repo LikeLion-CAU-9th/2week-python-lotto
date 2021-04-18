@@ -1,6 +1,8 @@
 from lotto.lotto import LottoInformation
 from lotto_decorator.printer_decorator import printer_format
 
+INPUT_ZERO_TO_LOTTO_AMOUNT = 0
+
 
 class InputMessage:
     INPUT_PURCHASED_LOTTO_TOTAL_AMOUNT_MESSAGE = '로또 구입 금액을 입력해주세요: '
@@ -33,7 +35,7 @@ def input_purchased_lotto_total_amount():
 
 
 def is_over_minimum_lotto_total_amount(lotto_total_amount):
-    if lotto_total_amount == 0:
+    if lotto_total_amount == INPUT_ZERO_TO_LOTTO_AMOUNT:
         raise NotZeroLottoAmountError
 
     if lotto_total_amount < LottoInformation.LOTTO_PRICE:
