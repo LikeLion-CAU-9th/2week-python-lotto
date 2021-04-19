@@ -11,8 +11,6 @@ def run():
     printer_automatic_random_lotteries(automatic_random_lotteries)
 
     last_week_winning_lotto = get_last_week_winning_lotto()
-    print(last_week_winning_lotto)
-    print(automatic_random_lotteries)
     printer_last_week_winning_lotto(last_week_winning_lotto)
 
     print(get_winning_lotto_result(automatic_random_lotteries, last_week_winning_lotto))
