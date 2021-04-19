@@ -44,5 +44,9 @@ def printer_last_week_winning_lotto(last_week_winning_lotto):
 
 
 @printer_format
-def printer_winning_lotto_statistics_message():
+def printer_winning_lotto_statistics_information_message():
     print(PrintMessage.PRINTER_WINNING_LOTTO_STATISTICS_MESSAGE)
+
+
+def printer_winning_lotto_statistics(winning_lotto_result: dict):
+    print(winning_lotto_result)

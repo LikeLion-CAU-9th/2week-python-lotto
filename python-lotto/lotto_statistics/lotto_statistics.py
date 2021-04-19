@@ -1,11 +1,16 @@
-from enum import Enum
+from enum import Enum, unique
 
 
+@unique
 class LottoStatisticMatchingNumber(Enum):
-    THREE_MATCHED = 3
-    FOUR_MATCHED = 4
-    FIVE_MATCHED = 5
-    SIX_MATCHED = 6
+    THREE_MATCHED = (4, 3)
+    FOUR_MATCHED = (3, 4)
+    FIVE_MATCHED = (2, 5)
+    SIX_MATCHED = (1, 6)
+
+    def __init__(self, rank, matched_count):
+        self.rank = rank
+        self.matched_count = matched_count
 
 
 def get_winning_lotto_result(automatic_random_lotteries: list, last_week_winning_lotto: list):
@@ -32,6 +37,6 @@ def get_winning_matched_count(winning_lotto_matched_numbers):
 def get_lotto_matching_statistic(winning_matched_count_numbers):
     lotto_matching_statistic = dict()
     for lotto_matched_index in LottoStatisticMatchingNumber:
-        lotto_matching_statistic[lotto_matched_index.value] = \
-            winning_matched_count_numbers.count(lotto_matched_index.value)
+        lotto_matching_statistic[lotto_matched_index.matched_count] = \
+            winning_matched_count_numbers.count(lotto_matched_index.matched_count)
     return lotto_matching_statistic
