@@ -4,6 +4,7 @@ from lotto_decorator.printer_decorator import printer_format
 class PrintMessage:
     PRINTER_LOTTO_START_MESSAGE = "로또 게임을 시작합니다!"
     PRINTER_AUTOMATIC_RANDOM_LOTTERIES_MESSAGE = "{}장의 로또를 구입하셨습니다."
+    PRINTER_WINNING_LOTTO_STATISTICS_MESSAGE = "로또 당첨 결과"
 
 
 class PrintErrorMessage:
@@ -40,3 +41,8 @@ def printer_value_error_message():
 @printer_format
 def printer_last_week_winning_lotto(last_week_winning_lotto):
     print(last_week_winning_lotto)
+
+
+@printer_format
+def printer_winning_lotto_statistics_message():
+    print(PrintMessage.PRINTER_WINNING_LOTTO_STATISTICS_MESSAGE)
