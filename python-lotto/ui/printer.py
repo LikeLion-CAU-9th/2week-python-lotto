@@ -34,3 +34,8 @@ def printer_exception_error_message(error_message):
 @printer_format
 def printer_value_error_message():
     print(PrintErrorMessage.INPUT_INVALID_FORMAT_LOTTO_TOTAL_AMOUNT_MESSAGE)
+
+
+@printer_format
+def printer_last_week_winning_lotto(last_week_winning_lotto: list):
+    print(last_week_winning_lotto)

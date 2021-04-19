@@ -53,11 +53,16 @@ def input_last_week_winning_lotto():
     while True:
         try:
             last_week_winning_lotto = input(InputMessage.INPUT_LAST_WEEK_WINNING_LOTTO_MESSAGE)
-            if has_six_number(last_week_winning_lotto):
+            last_week_winning_lotto_ticket = last_week_winning_lotto.split(",")
+            if has_six_number(last_week_winning_lotto_ticket):
                 return last_week_winning_lotto
         except Exception as e:
             print(e)
 
 
 def has_six_number(last_week_winning_lotto):
-    pass
+    if len(last_week_winning_lotto) < 6:
+        raise UnderSixNumberInLottoError
+    if len(last_week_winning_lotto) > 6:
+        raise OverSixNumberInLottoError
+    return True
