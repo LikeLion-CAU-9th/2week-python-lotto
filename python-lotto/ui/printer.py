@@ -10,8 +10,9 @@ class PrintErrorMessage:
     INPUT_INVALID_FORMAT_LOTTO_TOTAL_AMOUNT_MESSAGE = '숫자형식의 금액을 입력해주세요.'
     INPUT_NOT_ZERO_LOTTO_TOTAL_AMOUNT_MESSAGE = '구입할 로또 금액으로 0원을 입력하실 수 없습니다. 로또 한장 이상의 금액을 입력해주세요.'
     INPUT_NOT_SATISFY_MINIMUM_LOTTO_TOTAL_AMOUNT_MESSAGE = "로또 한장 이상의 금액을 입력해주세요."
-    INPUT_UNDER_SIX_NUMBER_IN_LOTTO_MESSAGE = '6개 미만으로 입력하셨습니다. 숫자 6개를 입력해주세요'
-    INPUT_OVER_SIX_NUMBER_IN_LOTTO_MESSAGE = '6개 초과로 입력하셨습니다 숫자 6개를 입력해주세요'
+    INPUT_UNDER_SIX_NUMBER_IN_LOTTO_MESSAGE = '6개 미만으로 입력하셨습니다. 숫자 6개를 입력해주세요.'
+    INPUT_OVER_SIX_NUMBER_IN_LOTTO_MESSAGE = '6개 초과로 입력하셨습니다. 숫자 6개를 입력해주세요.'
+    NOT_DUPLICATED_NUMBER_IN_LOTTO_MESSAGE = '중복되는 숫자를 입력하실 수 없습니다.'
 
 
 @printer_format
