@@ -14,7 +14,7 @@ class LottoStatisticMatchingNumber(Enum):
         self.price = price
 
 
-def get_winning_lotto_result(automatic_random_lotteries: list, last_week_winning_lotto: list):
+def get_winning_lotto_result(automatic_random_lotteries: list, last_week_winning_lotto: list) -> dict:
     winning_lotto_matched_numbers = get_winning_matched_number(automatic_random_lotteries, last_week_winning_lotto)
     winning_matched_count_numbers = get_winning_matched_count(winning_lotto_matched_numbers)
     return get_lotto_matching_statistic(winning_matched_count_numbers)

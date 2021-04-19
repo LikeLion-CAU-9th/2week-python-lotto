@@ -11,7 +11,7 @@ def get_automatic_random_lotteries():
     for lotto_count in range(number_of_lotto):
         random_lotteries.append(lotto_number_generator())
 
-    return random_lotteries
+    return random_lotteries, purchased_lotto_total_amount
 
 
 def calculate_number_of_lotto(purchased_lotto_amount: int):
