@@ -34,6 +34,11 @@ class NotDuplicatedNumberInLottoError(Exception):
         super().__init__(PrintErrorMessage.NOT_DUPLICATED_NUMBER_IN_LOTTO_MESSAGE)
 
 
+class InvalidNumberRangeInLottoError(Exception):
+    def __init__(self):
+        super().__init__(PrintErrorMessage.INVALID_NUMBER_RANGE_IN_LOTTO_MESSAGE)
+
+
 def input_purchased_lotto_total_amount():
     while True:
         try:
@@ -61,7 +66,9 @@ def input_last_week_winning_lotto():
             last_week_winning_lotto_ticket = last_week_winning_lotto.split(",")
             last_week_winning_lotto_ticket = list(map(int, last_week_winning_lotto_ticket))
 
-            if has_six_number(last_week_winning_lotto_ticket) and has_duplicated_number(last_week_winning_lotto_ticket):
+            if has_six_number(last_week_winning_lotto_ticket) and \
+                    has_duplicated_number(last_week_winning_lotto_ticket) and \
+                    is_valid_range(last_week_winning_lotto_ticket):
                 return last_week_winning_lotto_ticket
         except Exception as e:
             printer_exception_error_message(e)
@@ -78,4 +85,11 @@ def has_six_number(last_week_winning_lotto):
 def has_duplicated_number(last_week_winning_lotto):
     if len(last_week_winning_lotto) != len(set(last_week_winning_lotto)):
         raise NotDuplicatedNumberInLottoError
+    return True
+
+
+def is_valid_range(last_week_winning_lotto):
+    print(last_week_winning_lotto)
+    if [i for i in last_week_winning_lotto if i < LottoInformation.LOTTO_FIRST_NUMBER or i > LottoInformation.LOTTO_LAST_NUMBER]:
+        raise InvalidNumberRangeInLottoError
     return True

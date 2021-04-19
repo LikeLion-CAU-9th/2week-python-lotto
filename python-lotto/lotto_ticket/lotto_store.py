@@ -1,5 +1,5 @@
 from lotto_ticket.lotto_information import LottoInformation
-from ui.input_view import input_purchased_lotto_total_amount, input_last_week_winning_lotto
+from ui.inputer import input_purchased_lotto_total_amount, input_last_week_winning_lotto
 from lotto_ticket.lotto_generator import lotto_number_generator
 
 

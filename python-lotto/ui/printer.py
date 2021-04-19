@@ -19,6 +19,7 @@ class PrintErrorMessage:
     INPUT_UNDER_SIX_NUMBER_IN_LOTTO_MESSAGE = '6개 미만으로 입력하셨습니다. 숫자 6개를 입력해주세요.'
     INPUT_OVER_SIX_NUMBER_IN_LOTTO_MESSAGE = '6개 초과로 입력하셨습니다. 숫자 6개를 입력해주세요.'
     NOT_DUPLICATED_NUMBER_IN_LOTTO_MESSAGE = '중복되는 숫자를 입력하실 수 없습니다.'
+    INVALID_NUMBER_RANGE_IN_LOTTO_MESSAGE = "1 ~ 45 까지의 숫자를 입력해주세요."
 
 
 @printer_format
