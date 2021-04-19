@@ -1,12 +1,15 @@
 from lotto_decorator.printer_decorator import printer_format
 from lotto_statistics.lotto_statistics import LottoStatisticMatchingNumber
 
+DECIMAL_POINT_OUT_RANGE = 2
+
 
 class PrintMessage:
     PRINTER_LOTTO_START_MESSAGE = "로또 게임을 시작합니다!"
     PRINTER_AUTOMATIC_RANDOM_LOTTERIES_MESSAGE = "{}장의 로또를 구입하셨습니다."
     PRINTER_WINNING_LOTTO_STATISTICS_MESSAGE = "로또 당첨 결과"
     PRINTER_WINNING_LOTTO_STATISTICS = "{}등({}개가 맞을 때) - {}원 - {}개"
+    PRINTER_LOTTO_PROFIT_MESSAGE = "수익률"
 
 
 class PrintErrorMessage:
@@ -23,6 +26,7 @@ def printer_lotto_start_information():
     print(PrintMessage.PRINTER_LOTTO_START_MESSAGE)
 
 
+@printer_format
 def printer_automatic_random_lotteries(lotteries: list):
     print(PrintMessage.PRINTER_AUTOMATIC_RANDOM_LOTTERIES_MESSAGE.format(len(lotteries)))
 
@@ -58,3 +62,12 @@ def printer_winning_lotto_statistics(winning_lotto_result: dict):
             lotto_matched_index.price,
             winning_lotto_result[lotto_matched_index.matched_count]
         ))
+
+
+@printer_format
+def printer_lotto_profit_information_message():
+    print(PrintMessage.PRINTER_LOTTO_PROFIT_MESSAGE)
+
+
+def printer_lotto_profit(profit: float):
+    print(round(profit, DECIMAL_POINT_OUT_RANGE))

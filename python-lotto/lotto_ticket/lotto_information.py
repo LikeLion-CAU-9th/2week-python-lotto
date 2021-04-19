@@ -1,3 +1,7 @@
 class LottoInformation:
     LOTTO_PRICE = 1000
     LOTTO_SIZE = 6
+    LOTTO_FIRST_NUMBER = 1
+    LOTTO_LAST_NUMBER = 46
+    LOTTO_LENGTH = 6
+
