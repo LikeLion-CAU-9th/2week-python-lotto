@@ -59,8 +59,10 @@ def input_last_week_winning_lotto():
         try:
             last_week_winning_lotto = input(InputMessage.INPUT_LAST_WEEK_WINNING_LOTTO_MESSAGE)
             last_week_winning_lotto_ticket = last_week_winning_lotto.split(",")
-            if has_six_number(last_week_winning_lotto_ticket) and has_duplicated_number(last_week_winning_lotto):
-                return last_week_winning_lotto
+            last_week_winning_lotto_ticket = list(map(int, last_week_winning_lotto_ticket))
+
+            if has_six_number(last_week_winning_lotto_ticket) and has_duplicated_number(last_week_winning_lotto_ticket):
+                return last_week_winning_lotto_ticket
         except Exception as e:
             printer_exception_error_message(e)
 

@@ -38,5 +38,5 @@ def printer_value_error_message():
 
 
 @printer_format
-def printer_last_week_winning_lotto(last_week_winning_lotto: list):
+def printer_last_week_winning_lotto(last_week_winning_lotto):
     print(last_week_winning_lotto)

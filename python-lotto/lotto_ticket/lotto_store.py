@@ -21,4 +21,3 @@ def calculate_number_of_lotto(purchased_lotto_amount: int):
 def get_last_week_winning_lotto():
     last_week_winning_lotto = input_last_week_winning_lotto()
     return last_week_winning_lotto
-
