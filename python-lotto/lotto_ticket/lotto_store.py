@@ -4,9 +4,6 @@ from lotto_ticket.lotto_generator import lotto_number_generator
 
 
 def get_automatic_random_lotteries():
-    def calculate_number_of_lotto(purchased_lotto_amount: int):
-        return purchased_lotto_amount // LottoInformation.LOTTO_PRICE
-
     random_lotteries = []
     purchased_lotto_total_amount = input_purchased_lotto_total_amount()
     number_of_lotto = calculate_number_of_lotto(purchased_lotto_total_amount)
@@ -16,3 +13,6 @@ def get_automatic_random_lotteries():
 
     return random_lotteries
 
+
+def calculate_number_of_lotto(purchased_lotto_amount: int):
+    return purchased_lotto_amount // LottoInformation.LOTTO_PRICE
