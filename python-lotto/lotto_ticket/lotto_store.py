@@ -1,5 +1,5 @@
 from lotto_ticket.lotto_information import LottoInformation
-from ui.input_view import input_purchased_lotto_total_amount
+from ui.input_view import input_purchased_lotto_total_amount, input_last_week_winning_lotto
 from lotto_ticket.lotto_generator import lotto_number_generator
 
 
@@ -16,3 +16,10 @@ def get_automatic_random_lotteries():
 
 def calculate_number_of_lotto(purchased_lotto_amount: int):
     return purchased_lotto_amount // LottoInformation.LOTTO_PRICE
+
+
+def get_last_week_winning_lotto():
+    last_week_winning_lotto = input_last_week_winning_lotto()
+    last_week_winning_lotto_ticket = last_week_winning_lotto.split(",")
+    return last_week_winning_lotto_ticket
+
