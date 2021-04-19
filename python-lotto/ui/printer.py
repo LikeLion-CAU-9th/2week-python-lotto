@@ -1,10 +1,12 @@
 from lotto_decorator.printer_decorator import printer_format
+from lotto_statistics.lotto_statistics import LottoStatisticMatchingNumber
 
 
 class PrintMessage:
     PRINTER_LOTTO_START_MESSAGE = "로또 게임을 시작합니다!"
     PRINTER_AUTOMATIC_RANDOM_LOTTERIES_MESSAGE = "{}장의 로또를 구입하셨습니다."
     PRINTER_WINNING_LOTTO_STATISTICS_MESSAGE = "로또 당첨 결과"
+    PRINTER_WINNING_LOTTO_STATISTICS = "{}등({}개가 맞을 때) - {}원 - {}개"
 
 
 class PrintErrorMessage:
@@ -49,4 +51,10 @@ def printer_winning_lotto_statistics_information_message():
 
 
 def printer_winning_lotto_statistics(winning_lotto_result: dict):
-    print(winning_lotto_result)
+    for lotto_matched_index in LottoStatisticMatchingNumber:
+        print(PrintMessage.PRINTER_WINNING_LOTTO_STATISTICS.format(
+            lotto_matched_index.rank,
+            lotto_matched_index.matched_count,
+            lotto_matched_index.price,
+            winning_lotto_result[lotto_matched_index.matched_count]
+        ))

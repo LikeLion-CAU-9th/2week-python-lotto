@@ -3,14 +3,15 @@ from enum import Enum, unique
 
 @unique
 class LottoStatisticMatchingNumber(Enum):
-    THREE_MATCHED = (4, 3)
-    FOUR_MATCHED = (3, 4)
-    FIVE_MATCHED = (2, 5)
-    SIX_MATCHED = (1, 6)
+    THREE_MATCHED = (4, 3, 5000)
+    FOUR_MATCHED = (3, 4, 20000)
+    FIVE_MATCHED = (2, 5, 100000)
+    SIX_MATCHED = (1, 6, 5000000)
 
-    def __init__(self, rank, matched_count):
+    def __init__(self, rank, matched_count, price):
         self.rank = rank
         self.matched_count = matched_count
+        self.price = price
 
 
 def get_winning_lotto_result(automatic_random_lotteries: list, last_week_winning_lotto: list):
